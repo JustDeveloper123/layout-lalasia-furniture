@@ -23,20 +23,18 @@ import { bigFirstLetter, loadProductItem, openProduct } from './_productsFunctio
     return relatedItems.map(
       product =>
         new Product(product, {
-          html: `<a href="http://localhost:3000/layout-lalasia-furniture/src/pages/product-item/">
-              <div class="related-items__item-loader product-item-loader"></div>
+          html: `<div class="related-items__item-loader product-item-loader"></div>
               <div class="related-items__item-img product-item-img">
                 <img src="${product.imgPath}" alt="${product.name}" />
               </div>
               <p class="related-items__item-prefix product-item-prefix">${bigFirstLetter(product.category)}</p>
               <h3 class="related-items__item-name product-item-name">${product.name}</h3>
               <p class="related-items__item-description product-item-description">${product.material}</p>
-              <p class="related-items__item-price product-item-price">$${product.price}</p>
-            </a>`,
+              <p class="related-items__item-price product-item-price">$${product.price}</p>`,
           tag: 'a',
           attributes: [
             ['class', 'related-items__item product-item'],
-            ['href', 'http://localhost:3000/layout-lalasia-furniture/src/pages/product-item/'],
+            ['href', '/layout-lalasia-furniture/src/pages/product-item/'],
             ['data-product-id', product.id],
           ],
           loader: {
