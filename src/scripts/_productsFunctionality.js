@@ -118,6 +118,8 @@ export async function loadProductItem() {
   const product = products.find(product => product.id === pageProductId);
   if (!product) return;
 
+  document.title = `${product.name}`;
+
   const completedProduct = await new Product(product, {
     html: `<div class="product__img">
           <div class="product-item-loader"></div>
