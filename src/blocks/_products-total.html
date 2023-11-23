@@ -1,0 +1,42 @@
+<section class="total">
+  <div class="container">
+    <div class="total__options">
+      <div class="total__search search">
+        <svg class="total__search-icon search-icon">
+          <use xlink:href="/img/sprites.svg#search"></use>
+        </svg>
+        <input type="text" class="total__search-input search-input" placeholder="Search product" />
+        <button class="total__search-btn btn-primary search-btn">Find Now</button>
+        <section class="total__search-items"></section>
+      </div>
+      <button class="total__filter">
+        <!-- _active-filter -->
+        <svg class="total__filter-icon">
+          <use xlink:href="/img/sprites.svg#filter"></use>
+        </svg>
+        <span class="total__filter-text">Filter</span>
+      </button>
+    </div>
+    <div class="total__title-row">
+      <h2 class="total__title title-2">Total Product</h2>
+      <span class="total__total-products-num">0</span>
+    </div>
+    <div class="total__filtered-row">
+      <p class="total__filtered-search _hidden">
+        Search:
+        <span class="search">White Chair Minimal</span>
+      </p>
+      <p class="total__filtered-category _hidden">
+        Filter:
+        <span class="category">Chair</span>
+      </p>
+    </div>
+    <h3 class="total__products-empty-message title-3 _hidden">
+      Nothing found.
+      <br />
+      Change the search parameters
+    </h3>
+    <section class="total__products"></section>
+    <div class="total__pagination"></div>
+  </div>
+</section>

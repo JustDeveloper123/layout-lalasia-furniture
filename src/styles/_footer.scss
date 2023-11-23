@@ -1,0 +1,114 @@
+.footer {
+  padding-top: 20px;
+  padding-bottom: 24px;
+  @include resp-prop(padding-bottom, 88, 24, $contWidth, $mobileWidth, 1);
+
+  // .container {
+  // }
+
+  &__logo-info {
+    max-width: 85%;
+  }
+
+  &__logo-img {
+    display: inline-block;
+
+    svg {
+      width: 99px;
+      height: 32px;
+    }
+    &:focus {
+      outline: 1px solid var(--title-color1);
+    }
+  }
+
+  &__logo-text {
+    margin-top: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--paragraph-color);
+    @include resp-prop(font-size, 18, 14, $contWidth, $mobileWidth, 0);
+    @include resp-prop(margin-top, 36, 20, $contWidth, $mobileWidth, 0);
+  }
+
+  &__nav {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    @include resp-prop(gap, 100, 30, $contWidth, $mobileWidth, 1);
+  }
+
+  // &__list {
+  // }
+
+  &__list-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--title-color);
+    margin-bottom: 8px;
+    @include resp-prop(font-size, 20, 16, $contWidth, $mobileWidth, 0);
+  }
+
+  &__list-link {
+    margin-top: 6px;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--paragraph-color);
+    position: relative;
+    @include resp-prop(margin-top, 12, 6, $contWidth, $mobileWidth, 0);
+    &::before {
+      content: '';
+      position: absolute;
+      --left: -5px;
+      left: var(--left);
+      bottom: -3px;
+      width: 0;
+      height: 1px;
+      transition: width 0.4s ease 0s;
+      background-color: var(--primary-color);
+    }
+
+    &:hover,
+    &:focus {
+      color: var(--primary-color);
+
+      &::before {
+        width: calc(((var(--left) * -1) * 2) + 100%);
+      }
+    }
+  }
+
+  @media screen and (min-width: $px-mobile-480) {
+    &__logo-info {
+      max-width: 60%;
+    }
+  }
+  @media screen and (min-width: $px-tablet-768) {
+    .container {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+    }
+    &__logo-info {
+      max-width: 40%;
+    }
+    &__logo-text {
+      margin-top: 20px;
+      color: var(--title-color);
+    }
+    &__logo-img {
+      svg {
+        width: 130px;
+        height: 42px;
+      }
+    }
+    &__nav {
+      margin-top: 0;
+    }
+    &__list-link {
+      color: var(--title-color);
+    }
+  }
+}

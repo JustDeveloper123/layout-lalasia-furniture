@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Ramadhan Sale Offer",
+    "description": "Get 40% off for the first transaction on Lalasia",
+    "discount": true,
+    "imgPath": "/layout-lalasia-furniture/img/parts/product-slider-1.png"
+  },
+  {
+    "title": "Vite + Vanilla JS",
+    "description": "This project has been built using Vite with Vanilla JS.",
+    "discount": false,
+    "imgPath": "/layout-lalasia-furniture/img/parts/intro-interior.png"
+  },
+  {
+    "title": "Offer Right Now!",
+    "description": "Get 40% off for the first transaction on Lalasia",
+    "discount": false,
+    "imgPath": "/layout-lalasia-furniture/img/parts/article-intro.png"
+  },
+  {
+    "title": "1+1=3. Only today!",
+    "description": "Get 40% off for the first transaction on Lalasia. A good discount!",
+    "discount": true,
+    "imgPath": "/layout-lalasia-furniture/img/parts/about-us-intro.png"
+  }
+]

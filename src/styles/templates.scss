@@ -1,0 +1,7 @@
+%introMarginTopHeader {
+  @include resp-prop(margin-top, 80, 60, $contWidth, $mobileWidth, 0);
+}
+%sectionPaddingY {
+  @include resp-prop(padding-top, 90, 50, $contWidth, $mobileWidth, 0);
+  @include resp-prop(padding-bottom, 90, 50, $contWidth, $mobileWidth, 0);
+}

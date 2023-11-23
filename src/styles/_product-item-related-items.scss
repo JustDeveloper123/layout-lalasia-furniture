@@ -1,0 +1,61 @@
+.related-items {
+  @include resp-prop(padding-top, 25, 50, $contWidth, $mobileWidth, 0);
+  @include resp-prop(padding-bottom, 100, 83, $contWidth, $mobileWidth, 0);
+
+  // .container {
+  // }
+
+  // &__title {
+  // }
+
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+    @include resp-prop(margin-top, 30, 23, $contWidth, $mobileWidth, 0);
+    @include resp-prop(margin-left, -15, -7.5, $contWidth, $mobileWidth, 0);
+    @include resp-prop(margin-right, -15, -7.5, $contWidth, $mobileWidth, 0);
+    @include resp-prop(row-gap, 15, 7.5, $contWidth, $mobileWidth, 0);
+  }
+
+  &__item {
+    flex-basis: 100%;
+    @include resp-prop(padding-top, 15, 7.5, $contWidth, $mobileWidth, 0);
+    @include resp-prop(padding-bottom, 15, 7.5, $contWidth, $mobileWidth, 0);
+    @include resp-prop(padding-left, 14.5, 7.5, $contWidth, $mobileWidth, 0);
+    @include resp-prop(padding-right, 14.5, 7.5, $contWidth, $mobileWidth, 0);
+
+    &._hidden {
+      display: none;
+    }
+
+    @media screen and (min-width: $px-mobile-480) {
+      flex-basis: 50%;
+
+      &._hidden {
+        display: flex;
+      }
+    }
+    @media screen and (min-width: $px-tablet-768) {
+      flex-basis: calc(100% / 3);
+
+      &._hidden {
+        display: none;
+      }
+    }
+  }
+
+  // &__item-img {
+  // }
+
+  // &__item-prefix {
+  // }
+
+  // &__item-name {
+  // }
+
+  // &__item-description {
+  // }
+
+  // &__item-price {
+  // }
+}

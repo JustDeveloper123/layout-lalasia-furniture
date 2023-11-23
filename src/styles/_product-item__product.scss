@@ -1,0 +1,122 @@
+.product {
+  @extend %introMarginTopHeader;
+  @include resp-prop(padding-top, 100, 50, $contWidth, $mobileWidth, 0);
+  @include resp-prop(padding-bottom, 25, 50, $contWidth, $mobileWidth, 0);
+
+  // .container {
+  // }
+
+  &__wrap {
+    @media screen and (min-width: $px-tablet-768) {
+      display: flex;
+      justify-content: space-between;
+      @include resp-prop(gap, 50, 25, $contWidth, $mobileWidth, 0);
+    }
+  }
+
+  &__img {
+    flex-basis: 40%;
+    max-width: 400px;
+    margin: 0 auto;
+    display: inline-flex;
+    flex-direction: column;
+    position: relative;
+
+    @media screen and (min-width: $px-tablet-768) {
+      max-width: none;
+    }
+
+    img {
+      display: block;
+      aspect-ratio: 1 / 1;
+      width: 100%;
+    }
+  }
+
+  &__info {
+    flex-basis: 60%;
+    padding: 30px 0;
+
+    @media screen and (min-width: $px-tablet-768) {
+      padding: 0;
+    }
+  }
+
+  // &__name {
+  // }
+
+  &__material {
+    color: var(--paragraph-color);
+    font-weight: 500;
+    @include resp-prop(margin-top, 10, 4, $contWidth, $mobileWidth, 0);
+    @include resp-prop(font-size, 18, 14, $contWidth, $mobileWidth, 0);
+  }
+
+  &__description {
+    margin-top: 20px;
+
+    .read-more {
+      color: var(--primary-color);
+      background-color: transparent;
+      cursor: pointer;
+      @include resp-prop(font-size, 18, 14, $contWidth, $mobileWidth, 0);
+
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__price {
+    @include resp-prop(margin-top, 30, 16, $contWidth, $mobileWidth, 0);
+  }
+
+  &__btns {
+    display: flex;
+    flex-direction: column;
+    @include resp-prop(margin-top, 50, 30, $contWidth, $mobileWidth, 0);
+    @include resp-prop(gap, 20, 12, $contWidth, $mobileWidth, 0);
+
+    @media screen and (min-width: $px-tablet-768) {
+      flex-direction: row;
+    }
+  }
+
+  &__btn {
+    display: block;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.15s ease 0s;
+    padding-left: 30px;
+    padding-right: 30px;
+    @include resp-prop(padding-top, 18, 15, $contWidth, $mobileWidth, 0);
+    @include resp-prop(padding-bottom, 18, 15, $contWidth, $mobileWidth, 0);
+  }
+
+  &__btn-buy {
+    background-color: var(--primary-color);
+    color: white;
+    border: 1px solid transparent;
+
+    &:hover,
+    &:focus {
+      filter: brightness(1.2);
+      border-color: rgb(37, 59, 44);
+    }
+  }
+
+  &__btn-add {
+    border: 1px solid #c0c0c0;
+    background-color: white;
+    color: var(--title-color);
+
+    &:hover,
+    &:focus {
+      filter: brightness(0.9);
+      border-color: #838383;
+    }
+  }
+}

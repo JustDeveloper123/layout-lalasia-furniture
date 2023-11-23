@@ -1,0 +1,32 @@
+.join {
+  @extend %sectionPaddingY;
+
+  .container {
+    display: flex;
+    column-gap: 40px;
+    row-gap: 18px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+  }
+
+  &__btn a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+
+    svg {
+      display: flex;
+      align-items: center;
+      width: 25px;
+      height: 25px;
+      object-fit: contain;
+      stroke: var(--screen-color);
+    }
+  }
+}

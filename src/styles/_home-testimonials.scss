@@ -1,0 +1,165 @@
+.testimonials {
+  @extend %sectionPaddingY;
+
+  // .container {
+  // }
+
+  &__prefix {
+    text-align: center;
+  }
+
+  &__title {
+    text-align: center;
+    @include resp-prop(margin-top, 14, 8, $contWidth, $mobileWidth, 0);
+  }
+
+  &__description {
+    max-width: 626px;
+    margin-left: auto;
+    margin-right: auto;
+    @include resp-prop(margin-top, 30, 18, $contWidth, $mobileWidth, 0);
+
+    @media screen and (min-width: $px-mobile-480) {
+      text-align: center;
+    }
+  }
+
+  &__slider.swiper {
+    padding-bottom: 40px;
+    max-width: 1400px;
+    position: relative;
+    @include resp-prop(margin-top, 50, 30, $contWidth, $mobileWidth, 0);
+
+    &::before,
+    &::after {
+      content: '';
+      display: none;
+      position: absolute;
+      top: 0;
+      width: 60px;
+      height: 100%;
+      z-index: 2;
+      pointer-events: none;
+
+      @media screen and (min-width: $px-pc-1280) {
+        display: block;
+      }
+    }
+    &::before {
+      left: 0;
+      background-image: linear-gradient(to right, var(--screen-color), transparent);
+    }
+    &::after {
+      right: 0;
+      background-image: linear-gradient(to left, var(--screen-color), transparent);
+    }
+
+    // .swiper-wrapper {
+    // }
+    .swiper-slide {
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      @include resp-prop(padding-top, 26, 18, $contWidth, $mobileWidth, 0);
+      @include resp-prop(padding-left, 24, 16, $contWidth, $mobileWidth, 0);
+      @include resp-prop(padding-right, 24, 16, $contWidth, $mobileWidth, 0);
+      @include resp-prop(padding-bottom, 24, 16, $contWidth, $mobileWidth, 0);
+    }
+    // .swiper-lazy-preloader {
+    // }
+    .swiper-pagination {
+      position: absolute;
+      bottom: 5px;
+      left: 50%;
+      transform: translateX(-50%);
+      gap: 10px;
+      display: flex;
+
+      .swiper-pagination-bullet {
+        background-color: var(--paragraph-color1);
+        padding: 8px;
+        display: inline-block;
+        border-radius: 50%;
+        transition: background-color 0.4s ease 0s;
+        cursor: pointer;
+
+        &-active {
+          background-color: var(--primary-color);
+        }
+      }
+    }
+  }
+
+  &__item-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include resp-prop(width, 40, 32, $contWidth, $mobileWidth, 0);
+    @include resp-prop(height, 40, 32, $contWidth, $mobileWidth, 0);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__item-description {
+    margin-bottom: auto;
+    @include resp-prop(margin-top, 26, 18, $contWidth, $mobileWidth, 0);
+  }
+
+  &__item-review-wrap {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+
+    @include resp-prop(margin-top, 26, 18, $contWidth, $mobileWidth, 0);
+  }
+
+  &__item-user-wrap {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+  }
+
+  &__item-user-img {
+    position: relative;
+    @include resp-prop(width, 50, 28, $contWidth, $mobileWidth, 0);
+    @include resp-prop(height, 50, 28, $contWidth, $mobileWidth, 0);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+  }
+
+  &__item-user-name {
+    color: var(--title-color);
+    font-weight: 700;
+    @include resp-prop(font-size, 20, 14, $contWidth, $mobileWidth, 0);
+  }
+
+  &__item-rate-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__item-rate-img {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    fill: var(--secondary-color);
+  }
+
+  &__item-rate-num {
+    color: var(--title-color);
+    font-weight: 700;
+    @include resp-prop(font-size, 18, 14, $contWidth, $mobileWidth, 0);
+  }
+}

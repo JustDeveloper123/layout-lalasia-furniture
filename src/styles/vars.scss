@@ -1,0 +1,80 @@
+//# Main styles
+$html-font-size: 16;
+$font-eudoxusSans: 'Eudoxus Sans';
+
+//# Розміри екрану
+$contWidth: 1240; // Ширина основного контейнеру
+$contPadWidth: 20; // Ширина відступу контейнеру
+$contWidthSum: calc($contWidth + ($contPadWidth * 2)); // Сума ширини контейнеру
+$mobileWidth: 375; // Мінімальна ширина екрану
+
+$mobile-320: 320;
+$mobile-480: 480;
+$tablet-768: 768;
+$laptop-1024: 1024;
+$pc-1280: 1280;
+$pc-1600: 1600;
+$pc-1920: 1920;
+
+//# Breakpoints (розміри екрану в пікселях)
+$px-contWidth: #{$contWidth}px; // Ширина основного контейнеру
+$px-contPadWidth: #{$contPadWidth}px; // Ширина відступу контейнеру
+$px-contWidthSum: #{$contWidthSum}px; // Сума ширини контейнеру
+$px-mobileWidth: #{$mobileWidth}px; // Мінімальна ширина екрану
+
+$px-mobile-320: #{$mobile-320}px;
+$px-mobile-480: #{$mobile-480}px;
+$px-tablet-768: #{$tablet-768}px;
+$px-laptop-1024: #{$laptop-1024}px;
+$px-pc-1280: #{$pc-1280}px;
+$px-pc-1600: #{$pc-1600}px;
+$px-pc-1920: #{$pc-1920}px;
+
+//# Colors
+$dull-orange: #ad7e5c;
+$yellow: #ffb23f;
+$green: #518581;
+$dark: #151411;
+$gray: #afadb5;
+$close-red: #e63946;
+$blue-focus: #90e0ef;
+
+//# Theme
+:root {
+  --primary-color: #518581;
+  --primary-color1: #6e9996;
+  --primary-color2: #8baeab;
+  --primary-color3: #a8c2c0;
+  --primary-color4: #c5d6d5;
+  --primary-color5: #dce7e6;
+  --primary-color6: #a6d8d2;
+  --secondary-color: #ffb23f;
+  --secondary-color1: #ffbf5f;
+  --secondary-color2: #ffcc7f;
+  --secondary-color3: #ffd89f;
+  --secondary-color4: #ffe5bf;
+  --secondary-color5: #fff0d9;
+  --title-color: #151411;
+  --title-color1: #3c3b39;
+  --title-color2: #636260;
+  --title-color3: #8a8988;
+  --title-color4: #b1b1b0;
+  --title-color5: #d0d0cf;
+  --title-color6: #ffffff;
+  --paragraph-color: #afadb5;
+  --paragraph-color1: #bcbbc1;
+  --paragraph-color2: #cac8ce;
+  --paragraph-color3: #d7d6da;
+  --paragraph-color4: #e4e4e6;
+  --paragraph-color5: #efeff0;
+  --placeholder-color: #f9f9f9;
+  --placeholder-color1: #fafafa;
+  --placeholder-color2: #fbfbfb;
+  --placeholder-color3: #fcfcfc;
+  --placeholder-color4: #fdfdfd;
+  --placeholder-color5: #fefefe;
+  --screen-color: #ffffff;
+  --screen-color1: #f3f3f3;
+}
+
+//# Other

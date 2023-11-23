@@ -1,0 +1,97 @@
+.benefits {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  @extend %sectionPaddingY;
+
+  .container {
+  }
+
+  &__intro {
+    @media screen and (min-width: $px-tablet-768) {
+      display: flex;
+      gap: 40px;
+      justify-content: space-between;
+    }
+  }
+
+  &__title-wrap {
+  }
+
+  &__prefix {
+  }
+
+  &__title {
+    margin-top: 8px;
+    @include resp-prop(margin-top, 14, 8, $contWidth, $mobileWidth, 0);
+
+    @media screen and (min-width: $px-tablet-768) {
+      max-width: 450px;
+    }
+  }
+
+  &__description {
+    margin-top: 16px;
+
+    @media screen and (min-width: $px-tablet-768) {
+      margin-top: auto;
+      max-width: 405px;
+      @include resp-prop(max-width, 505, 305, $contWidth, $tablet-768, 0);
+    }
+  }
+
+  &__blocks {
+    margin-top: 38px;
+    @include resp-prop(margin-top, 50, 38, $contWidth, $mobileWidth, 0);
+
+    @media screen and (min-width: $px-tablet-768) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__block {
+    box-shadow: 0px 4px 100px 0px rgba(175, 173, 181, 0.1);
+    padding: 16px 16px 18px 16px;
+    gap: 20px;
+    @include resp-prop(gap, 29, 20, $contWidth, $mobileWidth, 0);
+    @include resp-prop(padding-top, 26, 16, $contWidth, $mobileWidth, 0);
+    @include resp-prop(padding-bottom, 26, 18, $contWidth, $mobileWidth, 0);
+    @include resp-prop(padding-left, 20, 16, $contWidth, $mobileWidth, 0);
+    @include resp-prop(padding-right, 28, 16, $contWidth, $mobileWidth, 0);
+  }
+
+  &__block-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: var(--screen-color1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include resp-prop(width, 62, 44, $contWidth, $mobileWidth, 0);
+    @include resp-prop(height, 62, 44, $contWidth, $mobileWidth, 0);
+
+    img {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+      user-select: none;
+      @include resp-prop(width, 30, 24, $contWidth, $mobileWidth, 0);
+      @include resp-prop(height, 30, 24, $contWidth, $mobileWidth, 0);
+    }
+  }
+
+  &__block-title {
+    margin-top: 14px;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--title-color);
+    @include resp-prop(margin-top, 24, 14, $contWidth, $mobileWidth, 0);
+    @include resp-prop(font-size, 24, 16, $contWidth, $mobileWidth, 0);
+  }
+
+  &__block-text {
+    margin-top: 6px;
+    @include resp-prop(margin-top, 20, 6, $contWidth, $mobileWidth, 0);
+  }
+}

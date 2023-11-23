@@ -1,0 +1,105 @@
+.intro {
+  @extend %introMarginTopHeader;
+  @include resp-prop(padding-top, 100, 50, $contWidth, $mobileWidth, 0);
+  @include resp-prop(padding-bottom, 90, 50, $contWidth, $mobileWidth, 0);
+
+  // .container {
+  // }
+
+  &__title {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+
+    span {
+      margin: 0 auto;
+      white-space: nowrap;
+      position: relative;
+    }
+  }
+  &__title-decor {
+    position: absolute;
+    --size: 24px;
+    width: var(--size);
+    height: var(--size);
+    stroke: var(--secondary-color);
+    right: 9px;
+    bottom: 15px;
+    z-index: -1;
+    pointer-events: none;
+    @include resp-prop(right, 13, 9, $contWidth, $mobileWidth, 0);
+    @include resp-prop(bottom, 37, 15, $contWidth, $mobileWidth, 0);
+    @include resp-prop(--size, 51, 24, $contWidth, $mobileWidth, 0);
+  }
+
+  &__description {
+    margin: 20px auto 0;
+    max-width: 796px;
+    text-align: center;
+    position: relative;
+    @include resp-prop(margin-top, 30, 20, $contWidth, $mobileWidth, 0);
+  }
+  &__description-arrow {
+    --size: 95px;
+    position: absolute;
+    stroke: var(--primary-color6);
+    top: -80px;
+    left: -38px;
+    width: var(--size);
+    height: var(--size);
+    z-index: -1;
+    pointer-events: none;
+    @include resp-prop(--size, 180, 95, $laptop-1024, $mobileWidth, 0);
+    @include resp-prop(top, -160, -80, $laptop-1024, $mobileWidth, 0);
+    @include resp-prop(left, 0, -20, $laptop-1024, $mobile-480, 0);
+    @include resp-prop(left, -20, -38, $mobile-480, $mobileWidth, 0);
+
+    @media screen and (min-width: $px-laptop-1024) {
+      left: -170px;
+      top: -80px;
+      --size: 249px;
+      @include resp-prop(left, -170, -140, $contWidth, $laptop-1024, 0);
+    }
+  }
+
+  &__search {
+    margin: 30px auto 0;
+    max-width: 810px;
+    @include resp-prop(margin-top, 50, 30, $contWidth, $mobileWidth, 0);
+  }
+
+  // &__search-icon {
+  // }
+
+  &__search-input.search-input {
+    @include resp-prop(padding-right, 200, 120, $contWidth, $mobileWidth, 0);
+
+    &:focus {
+      box-shadow: 0 -3px 8px rgba(51, 51, 51, 0.2);
+    }
+  }
+
+  // &__search-btn {
+  // }
+
+  &__img {
+    margin-top: 30px;
+    margin-left: -$px-contPadWidth;
+    margin-right: -$px-contPadWidth;
+    user-select: none;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+
+    @media screen and (min-width: $px-tablet-768) {
+      margin-top: 0;
+      @include resp-prop(margin-top, -36, -26, $contWidth, $tablet-768, 0);
+    }
+    @media screen and (min-width: $px-contWidth) {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+}

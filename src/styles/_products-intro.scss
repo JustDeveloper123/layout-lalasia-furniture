@@ -1,0 +1,193 @@
+.intro {
+  @extend %introMarginTopHeader;
+  @include resp-prop(padding-top, 100, 50, $contWidth, $mobileWidth, 0);
+  @include resp-prop(padding-bottom, 25, 15, $contWidth, $mobileWidth, 0);
+
+  // .container {
+  // }
+
+  &__title {
+    text-align: center;
+  }
+
+  &__description {
+    text-align: center;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+  }
+
+  &__slider.swiper {
+    max-width: 1440px; // slider container
+    margin-left: auto;
+    margin-right: auto;
+    @include resp-prop(margin-top, 50, 30, $contWidth, $mobileWidth, 0);
+    @include resp-prop(height, 500, 180, $contWidth, $mobileWidth, 0); // slider height
+    position: relative;
+
+    .swiper-wrapper {
+      height: 100%;
+    }
+    .swiper-slide {
+      padding-top: 30px;
+      padding-bottom: 30px;
+      padding-left: 24px;
+      padding-right: 24px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      @media screen and (min-width: $px-tablet-768) {
+        padding-left: 132px;
+        padding-right: 132px;
+      }
+    }
+    .swiper-pagination {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+      display: flex;
+      @include resp-prop(bottom, 22, 10, $contWidth, $mobileWidth, 0);
+      @include resp-prop(gap, 10, 5, $contWidth, $mobileWidth, 0);
+
+      &-bullet {
+        border-radius: 50%;
+        background-color: var(--screen-color);
+        opacity: 0.4;
+        transition: opacity 0.4s ease 0s;
+        @include resp-prop(padding, 4, 2.5, $contWidth, $mobileWidth, 0);
+
+        &-active {
+          opacity: 1;
+        }
+      }
+    }
+
+    [class*='swiper-button-'] {
+      display: none;
+
+      @media screen and (min-width: $px-tablet-768) {
+        position: absolute;
+        z-index: 10;
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        background: rgba(21, 20, 17, 0.6);
+        backdrop-filter: blur(7.5px);
+        top: 50%;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.2s ease 0s;
+
+        &:hover {
+          background: rgba(21, 20, 17, 0.4);
+        }
+
+        svg {
+          stroke: var(--screen-color);
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+    .swiper-button-prev {
+      @media screen and (min-width: $px-tablet-768) {
+        left: 40px;
+        transform: translateY(-50%);
+
+        &:hover {
+          transform: translateY(-50%) scale(1.05);
+        }
+      }
+    }
+    .swiper-button-next {
+      @media screen and (min-width: $px-tablet-768) {
+        right: 40px;
+        transform: translateY(-50%) rotate(180deg);
+
+        &:hover {
+          transform: translateY(-50%) scale(1.05) rotate(180deg);
+        }
+      }
+    }
+  }
+
+  &__slider-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__slider-body {
+    border-radius: 20px;
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    flex-direction: column;
+    align-self: flex-start;
+    background-color: rgba(50, 50, 50, 0.3);
+    padding: 20px 20px 20px 10px;
+
+    @media screen and (min-width: $px-laptop-1024) {
+      padding: 40px 10px 40px 0px;
+      transition: all 0.4s ease 0s;
+      background-color: transparent;
+
+      &:hover {
+        background-color: rgba(50, 50, 50, 0.5);
+        backdrop-filter: blur(5px);
+        padding: 40px 40px 40px 20px;
+      }
+    }
+  }
+
+  &__slider-discount {
+    color: var(--title-color6);
+    font-weight: 500;
+    background-color: var(--primary-color);
+    border-radius: 100px;
+    align-self: flex-start;
+    @include resp-prop(font-size, 14, 10, $contWidth, $mobileWidth, 0);
+    @include resp-prop(padding-top, 8, 6, $contWidth, $mobileWidth, 0);
+    @include resp-prop(padding-bottom, 8, 6, $contWidth, $mobileWidth, 0);
+    @include resp-prop(padding-left, 16, 10, $contWidth, $mobileWidth, 0);
+    @include resp-prop(padding-right, 16, 10, $contWidth, $mobileWidth, 0);
+  }
+
+  &__slider-body:hover &__slider-title {
+    text-decoration: underline;
+    text-underline-offset: 8px;
+  }
+
+  &__slider-title {
+    display: inline-block;
+    align-self: flex-start;
+    font-weight: 700;
+    color: var(--title-color6);
+    text-shadow: 2px 4px 4px rgba(21, 20, 17, 0.8);
+    transition: all 0.4s ease 0s;
+    @include resp-prop(margin-top, 15, 6, $contWidth, $mobileWidth, 0);
+    @include resp-prop(font-size, 44, 16, $contWidth, $mobileWidth, 0);
+  }
+
+  &__slider-text {
+    font-weight: 500;
+    color: var(--title-color6);
+    text-shadow: 2px 4px 4px rgba(21, 20, 17, 0.8);
+    @include resp-prop(margin-top, 20, 4, $contWidth, $mobileWidth, 0);
+    @include resp-prop(font-size, 24, 12, $contWidth, $mobileWidth, 0);
+    @include resp-prop(max-width, 430, 210, $contWidth, $mobileWidth, 0);
+
+    @media screen and (min-width: $px-tablet-768) {
+      font-weight: 700;
+    }
+  }
+}

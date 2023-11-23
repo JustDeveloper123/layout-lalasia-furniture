@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Janne Cooper",
+    "userImgPath": "/layout-lalasia-furniture/img/profiles/profile-1.png",
+    "text": "Pellentesque etiam blandit in tincidunt at donec. Eget ipsum blandit dignissim placerat nisi, adipiscing mauris blandit non purus parturient.",
+    "rating": "4.3"
+  },
+  {
+    "name": "Berry Gunawan",
+    "userImgPath": "/layout-lalasia-furniture/img/profiles/profile-2.png",
+    "text": "Pellentesque etiam blandit in tincidunt at donec. Eget ipsum dignissim placerat nisi, adipiscing mauris non purus parturient.",
+    "rating": "3.5"
+  },
+  {
+    "name": "Fermi Paradox",
+    "userImgPath": "/layout-lalasia-furniture/img/profiles/profile-9.png",
+    "text": "console.log(\"I'm tired.\")",
+    "rating": "1"
+  },
+  {
+    "name": "Vitalik",
+    "userImgPath": "/layout-lalasia-furniture/img/profiles/profile-7.png",
+    "text": "I use this application every fucking day!!! Sanya is the best I really love him 🌹😘 💋💋💋 I have a big penis",
+    "rating": "5"
+  },
+  {
+    "name": "Raymond Lead",
+    "userImgPath": "/layout-lalasia-furniture/img/profiles/profile-8.png",
+    "text": "I'm a future dollar billionaire (I don't need much money). Now I am learning Node.js. I hate my fucking sharaga and by the way I really love space, rockets, stars, etc.",
+    "rating": "4"
+  },
+  {
+    "name": "Janne Cooper",
+    "userImgPath": "/layout-lalasia-furniture/img/profiles/profile-6.png",
+    "text": "Pellentesque etiam blandit in tincidunt at donec. Eget ipsum dignissim placerat nisi, adipiscing mauris non purus parturient. Eget ipsum dignissim.",
+    "rating": "3.9"
+  }
+]

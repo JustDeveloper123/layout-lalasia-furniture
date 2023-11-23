@@ -1,0 +1,411 @@
+.articles {
+  @extend %sectionPaddingY;
+
+  // .container {
+  // }
+
+  // &__prefix {
+  // }
+
+  &__wrap {
+    @include resp-prop(margin-top, 14, 8, $contWidth, $mobileWidth, 0);
+
+    @media screen and (min-width: $px-tablet-768) {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+    }
+  }
+
+  &__main-block {
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (min-width: $px-tablet-768) {
+      width: 40vw;
+      @include resp-prop(padding-right, 50, 15, $contWidth, $tablet-768, 0);
+    }
+    @media screen and (min-width: $px-contWidthSum) {
+      width: calc($px-contWidthSum / 2);
+    }
+  }
+
+  // &__title {
+  // }
+
+  &__description {
+    margin-bottom: auto;
+    @include resp-prop(margin-top, 30, 16, $contWidth, $mobileWidth, 0);
+  }
+
+  &__main-slider.swiper {
+    margin-left: -$px-contPadWidth;
+    margin-right: -$px-contPadWidth;
+    width: calc(100% + $px-contPadWidth * 2);
+    position: relative;
+    padding-bottom: 35px;
+    margin-top: 10px;
+    --swiper-btn-size: 40px;
+
+    @media screen and (min-width: $px-tablet-768) {
+      padding-bottom: var(var(--swiper-btn-size) / 2);
+      margin-left: 0;
+      margin-right: 0;
+      width: 100%;
+    }
+
+    // .swiper-wrapper {
+    // }
+
+    .swiper-slide {
+      position: relative;
+      @include resp-prop(height, 565, 200, $contWidth, $mobileWidth, 0);
+
+      &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transition: all 0.4s ease 0s;
+        opacity: 0.4;
+        background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+
+        pointer-events: none;
+        z-index: 5;
+
+        @media screen and (min-width: $px-tablet-768) {
+          opacity: 0.6;
+        }
+      }
+      &:hover::before {
+        opacity: 1;
+        backdrop-filter: blur(2px);
+      }
+    }
+
+    .swiper-pagination {
+      position: absolute;
+      bottom: 0px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+
+      @media screen and (min-width: $px-tablet-768) {
+        display: none;
+      }
+
+      .swiper-pagination-bullet {
+        padding: 8px;
+        border-radius: 50%;
+        background-color: rgba(0, 0, 0, 0.3);
+        transition: all 0.4s ease 0s;
+        cursor: pointer;
+
+        &-active {
+          background-color: rgba(0, 0, 0, 0.7);
+        }
+      }
+    }
+
+    .swiper-buttons-wrap {
+      display: none;
+
+      @media screen and (min-width: $px-tablet-768) {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: calc(var(--swiper-btn-size) / -2) !important;
+        @include resp-prop(--swiper-btn-size, 70, 40, $contWidth, $tablet-768, 0);
+      }
+    }
+
+    [class*='swiper-button-'] {
+      position: relative;
+      z-index: 1;
+      width: var(--swiper-btn-size);
+      height: var(--swiper-btn-size);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: calc(var(--swiper-btn-size) / 2 * -1);
+      cursor: pointer;
+      transition: all 0.2s ease 0s;
+
+      svg {
+        width: 28px;
+        height: 28px;
+      }
+    }
+
+    .swiper-button-prev {
+      background-color: var(--screen-color);
+
+      &:hover {
+        filter: brightness(0.9);
+      }
+
+      svg {
+        stroke: var(--primary-color);
+      }
+    }
+    .swiper-button-next {
+      background-color: var(--primary-color);
+
+      &:hover {
+        filter: brightness(1.2);
+      }
+
+      svg {
+        stroke: var(--screen-color);
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &__main-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: bottom center;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &__main-slide {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 18px 14px;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    text-shadow: 2px 4px 4px rgba(0, 0, 0, 1);
+    @include resp-prop(padding-bottom, 50, 25, $contWidth, $tablet-768, 0);
+
+    @media screen and (min-width: $px-tablet-768) {
+      text-shadow: none;
+    }
+  }
+
+  &__main-prefix {
+    font-weight: 700;
+    color: var(--title-color6);
+    @include resp-prop(font-size, 18, 12, $contWidth, $mobileWidth, 0);
+
+    @media screen and (min-width: $px-tablet-768) {
+      font-weight: 500;
+    }
+  }
+
+  &__main-title {
+    font-weight: 700;
+    color: var(--title-color6);
+    @include resp-prop(margin-top, 10, 6, $contWidth, $mobileWidth, 0);
+    @include resp-prop(font-size, 26, 16, $contWidth, $mobileWidth, 0);
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__main-description {
+    color: var(--title-color6);
+    margin-top: 6px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    // max-width: 100%;
+    overflow: hidden;
+    display: inline-block;
+  }
+
+  &__main-link {
+    margin-top: 12px;
+    align-self: flex-start;
+    font-weight: 700;
+    display: inline-block;
+    color: var(--title-color6);
+    &:hover {
+      text-decoration: underline;
+    }
+    @include resp-prop(font-size, 18, 12, $contWidth, $mobileWidth, 0);
+
+    @media screen and (min-width: $px-tablet-768) {
+      font-weight: 500;
+    }
+  }
+
+  &__article-slider.swiper {
+    margin-top: 20px;
+    --gap: 20px;
+    --slides-qty: 3;
+    --slider-height: 840px;
+    height: var(--slider-height);
+    @include resp-prop(--slider-height, 840, 390, $contWidth, $mobileWidth, 0);
+    pointer-events: auto;
+
+    @media screen and (min-width: $px-tablet-768) {
+      --gap: 30px;
+      width: 100%;
+      margin-top: 0;
+    }
+
+    .swiper-wrapper {
+      transition: all 0.8s cubic-bezier(0.57, 0.21, 0.3, 1.5) 0s;
+    }
+
+    .swiper-slide {
+      display: flex;
+      align-items: center;
+      position: relative;
+      @include resp-prop(gap, 26, 14, $contWidth, $mobileWidth, 0);
+      transition: all 0.4s ease 0s;
+    }
+  }
+
+  &__article-img {
+    aspect-ratio: 1 / 1;
+    --slide-height: 110px;
+    @include resp-prop(--slide-height, 260, 110, $contWidth, $mobileWidth, 0);
+    min-width: var(--slide-height);
+    max-width: var(--slide-height);
+    height: var(--slide-height);
+    position: relative;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .swiper-slide:hover &__article-img-block.img-block {
+    transform: translateY(0);
+  }
+
+  &__article-img-block.img-block {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(2px);
+    transition: all 0.25s ease-out 0s;
+    transform: translateY(100%);
+    height: 25%;
+
+    @media screen and (min-width: $px-tablet-768) {
+      display: flex;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+  }
+  .img-block {
+    &__link {
+      color: var(--title-color6);
+      font-weight: 500;
+      font-size: 20px;
+      height: 100%;
+      width: 100%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  &__article-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  // &__article-prefix {
+  // }
+
+  &__article-title {
+    color: var(--title-color);
+    font-weight: 700;
+    white-space: wrap;
+    pointer-events: all;
+    @include resp-prop(margin-top, 21, 4, $contWidth, $mobileWidth, 0);
+    @include resp-prop(font-size, 24, 16, $contWidth, $mobileWidth, 0);
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__article-description {
+    display: none;
+
+    @media screen and (min-width: $px-tablet-768) {
+      display: block;
+      margin-top: 14px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+  }
+
+  &__article-user-post {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+
+    @media screen and (max-width: 375px) {
+      display: none;
+    }
+  }
+
+  &__article-user-info {
+    display: flex;
+    align-items: center;
+    @include resp-prop(gap, 10, 6, $contWidth, $mobileWidth, 0);
+  }
+
+  &__article-user-img {
+    aspect-ratio: 1/1;
+    @include resp-prop(width, 28, 18, $contWidth, $mobileWidth, 0);
+
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
+
+  &__article-user-name {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: inline-block;
+    overflow: hidden;
+    font-weight: 700;
+    color: var(--title-color);
+    @include resp-prop(font-size, 14, 12, $contWidth, $mobileWidth, 0);
+  }
+
+  &__article-date {
+    display: none;
+
+    @media screen and (min-width: $px-laptop-1024) {
+      display: block;
+      font-size: 14px;
+      color: var(--paragraph-color);
+      font-weight: 500;
+      text-align: right;
+    }
+  }
+}

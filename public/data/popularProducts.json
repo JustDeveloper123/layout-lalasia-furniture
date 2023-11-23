@@ -1,0 +1,34 @@
+[
+  {
+    "id": "g8sk39gh43",
+    "category": "chair",
+    "imgPath": "/layout-lalasia-furniture/img/products/white-aesthetic-chair.png",
+    "name": "White Aesthetic Chair",
+    "description": "Combination of wood and wool",
+    "price": 63.47
+  },
+  {
+    "id": "sjfaso2345",
+    "category": "cupboard",
+    "imgPath": "/layout-lalasia-furniture/img/products/wooden-cupboard-3row.png",
+    "name": "Wooden Cupboard 3 Row",
+    "description": "Combination of wood and wool. Lorem row",
+    "price": 79.88
+  },
+  {
+    "id": "435fy45h64",
+    "category": "chair",
+    "imgPath": "/layout-lalasia-furniture/img/products/minimalist-lounge-chair.png",
+    "name": "Minimalist Lounge Chair",
+    "description": "Combination of wood and wool. Lorem",
+    "price": 14.74
+  },
+  {
+    "id": "gdsfu32456",
+    "category": "table",
+    "imgPath": "/layout-lalasia-furniture/img/products/working-desk-setup.png",
+    "name": "Working Desk Setup",
+    "description": "Combination of wood",
+    "price": 47.9
+  }
+]

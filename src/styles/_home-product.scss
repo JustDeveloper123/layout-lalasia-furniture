@@ -1,0 +1,107 @@
+.product {
+  @extend %sectionPaddingY;
+
+  // .container {
+  // }
+
+  // &__prefix {
+  // }
+
+  &__wrap {
+    @include resp-prop(margin-top, 14, 8, $contWidth, $mobileWidth, 0);
+
+    @media screen and (min-width: $px-tablet-768) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 50px;
+    }
+  }
+
+  // &__info {
+  // }
+
+  // &__title {
+  // }
+
+  &__description {
+    @include resp-prop(margin-top, 50, 16, $contWidth, $mobileWidth, 0);
+  }
+
+  &__btn {
+    width: 100%;
+    @include resp-prop(margin-top, 50, 30, $contWidth, $mobileWidth, 0);
+
+    @media screen and (min-width: $px-mobile-480) {
+      width: auto;
+    }
+  }
+
+  &__stats {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 500px;
+    @include resp-prop(gap, 50, 8, $contWidth, $mobileWidth, 0);
+
+    @media screen and (min-width: $px-mobile-480) {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    @media screen and (min-width: $px-tablet-768) {
+      margin-top: 0;
+    }
+  }
+
+  &__stats-col {
+    display: inline-block;
+    text-align: center;
+  }
+
+  &__stats-num {
+    color: var(--title-color);
+    font-weight: 700;
+    @include resp-prop(font-size, 44, 22, $contWidth, $mobileWidth, 0);
+  }
+
+  &__stats-description {
+    @include resp-prop(margin-top, 10, 4, $contWidth, $mobileWidth, 0);
+  }
+
+  &__img {
+    place-self: end;
+    width: 100%;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+      user-select: none;
+      @include resp-prop(height, 250, 200, $tablet-768, $mobileWidth, 0);
+    }
+  }
+
+  &__img-1 {
+    margin-top: 50px;
+
+    @media screen and (min-width: $px-tablet-768) {
+      margin-top: 0;
+
+      img {
+        height: 260px;
+      }
+    }
+  }
+
+  &__img-2 {
+    margin-top: 20px;
+
+    @media screen and (min-width: $px-tablet-768) {
+      --img-2-h: 480px;
+
+      img {
+        height: var(--img-2-h);
+        margin-top: calc(var(--img-2-h) / 2 * -1);
+      }
+    }
+  }
+}
