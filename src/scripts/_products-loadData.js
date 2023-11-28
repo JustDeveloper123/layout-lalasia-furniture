@@ -1,7 +1,7 @@
 import Product from '../modules/Product.module';
 import initFilter from './_initFilter';
 import initSearch from './_initSearch';
-import { displayProducts, openProduct } from './_productsFunctionality';
+import { displayProducts } from './_productsFunctionality';
 
 const productsSliderData = async function () {
   const productsSlides = await fetch('/layout-lalasia-furniture/data/products-slider.json').then(res => res.json());
@@ -32,9 +32,6 @@ const productsSliderData = async function () {
 
 const productsData = async function () {
   const products = await fetch('/layout-lalasia-furniture/data/products.json').then(res => res.json());
-
-  // Opening product page on click
-  openProduct('.total__products');
 
   // Filter initialization
   initFilter(products);

@@ -20,7 +20,7 @@ const popularProductsData = async function () {
           parentEl: '.popular__slider .swiper-wrapper',
           attributes: [
             ['class', 'swiper-slide product-item'],
-            ['href', '/layout-lalasia-furniture/src/pages/product-item/'],
+            ['href', `/layout-lalasia-furniture/src/pages/product-item/?id=${productData.id}`],
             ['data-product-id', productData.id],
           ],
           tag: 'a',

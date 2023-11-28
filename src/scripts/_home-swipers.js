@@ -1,15 +1,13 @@
 import Swiper from 'swiper';
 import { Controller, Navigation, Pagination } from 'swiper/modules';
 import { mainArticlesData, popularProductsData, testimonialsData } from './_home-loadData';
-import { openProduct } from './_productsFunctionality';
 
 const sliders = {};
 
 (async () => {
   await popularProductsData(); // Якщо дані продуктів завантажені, ініціалізується слайдер
-  await openProduct('.popular__slider .swiper-wrapper'); // Клік по продукту і відкриття сторінки продукту
 
-  const popularSwiper = new Swiper('.popular__slider', {
+  const popularSwiper = await new Swiper('.popular__slider', {
     modules: [Navigation],
     navigation: {
       nextEl: '.popular__slider .swiper-button-next',

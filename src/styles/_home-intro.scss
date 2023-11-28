@@ -27,6 +27,7 @@
     bottom: 15px;
     z-index: -1;
     pointer-events: none;
+    animation: scale 1s infinite alternate 2s;
     @include resp-prop(right, 13, 9, $contWidth, $mobileWidth, 0);
     @include resp-prop(bottom, 37, 15, $contWidth, $mobileWidth, 0);
     @include resp-prop(--size, 51, 24, $contWidth, $mobileWidth, 0);
@@ -49,6 +50,7 @@
     height: var(--size);
     z-index: -1;
     pointer-events: none;
+    animation: scale 1s infinite 2s alternate;
     @include resp-prop(--size, 180, 95, $laptop-1024, $mobileWidth, 0);
     @include resp-prop(top, -160, -80, $laptop-1024, $mobileWidth, 0);
     @include resp-prop(left, 0, -20, $laptop-1024, $mobile-480, 0);
@@ -63,6 +65,8 @@
   }
 
   &__search {
+    position: relative;
+    z-index: 10;
     margin: 30px auto 0;
     max-width: 810px;
     @include resp-prop(margin-top, 50, 30, $contWidth, $mobileWidth, 0);
@@ -87,6 +91,7 @@
     margin-left: -$px-contPadWidth;
     margin-right: -$px-contPadWidth;
     user-select: none;
+    overflow: hidden;
 
     img {
       width: 100%;

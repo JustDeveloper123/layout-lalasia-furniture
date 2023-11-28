@@ -6,5 +6,7 @@ setPageTitle();
 
 import 'swiper/css';
 
+import './_header-animations.js';
+import './_home-animations.js';
 import './_home-loadData.js';
 import './_home-swipers.js';

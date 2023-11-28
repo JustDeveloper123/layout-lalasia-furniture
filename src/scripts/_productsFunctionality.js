@@ -33,8 +33,8 @@ export const displayProducts = function (products) {
           loaderEl: '.total__product-loader',
         },
         attributes: [
-          ['href', '/layout-lalasia-furniture/src/pages/product-item/'],
           ['class', 'total__product product-item'],
+          ['href', `/layout-lalasia-furniture/src/pages/product-item/?id=${productData.id}`],
           ['data-product-id', productData.id],
         ],
         parentEl: clss.totalProducts,
@@ -70,27 +70,6 @@ export function updateFilteredInfo(search, category) {
     sels.productsFilteredCategoryLabel.classList.remove('_hidden');
     sels.productsFilteredCategory.textContent = bigFirstLetter(category);
   }
-}
-
-export function openProduct(containerClass) {
-  const container = document.querySelector(String(containerClass));
-  if (!container) return;
-
-  const open = function (e) {
-    e.preventDefault();
-
-    const target = e.target.closest('.product-item');
-    if (!target) return;
-
-    const url = target.href;
-    const id = target.dataset.productId;
-    const newUrl = `${url}?id=${id}`;
-
-    window.open(newUrl, '_self');
-  };
-
-  // Event delegation
-  container.addEventListener('click', open);
 }
 
 export function textLoadMore(parent, len) {

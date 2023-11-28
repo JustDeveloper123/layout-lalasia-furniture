@@ -1,5 +1,5 @@
 import Product from '../modules/Product.module';
-import { bigFirstLetter, loadProductItem, openProduct } from './_productsFunctionality';
+import { bigFirstLetter, loadProductItem } from './_productsFunctionality';
 
 (async function () {
   await loadProductItem();
@@ -34,7 +34,7 @@ import { bigFirstLetter, loadProductItem, openProduct } from './_productsFunctio
           tag: 'a',
           attributes: [
             ['class', 'related-items__item product-item'],
-            ['href', '/layout-lalasia-furniture/src/pages/product-item/'],
+            ['href', `/layout-lalasia-furniture/src/pages/product-item/?id=${product.id}`],
             ['data-product-id', product.id],
           ],
           loader: {
@@ -46,6 +46,4 @@ import { bigFirstLetter, loadProductItem, openProduct } from './_productsFunctio
     );
   };
   loadRelatedItems();
-
-  openProduct('.related-items__items');
 })();
